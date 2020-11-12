@@ -24,7 +24,7 @@ namespace HomeWork4_1
         static void Main(string[] args)
         {
             {
-                double[] arr = new double[1];
+                int[] arr = new int[1];
                 Console.WriteLine("Введите количество элементов массива:");
                 string str = Console.ReadLine();
                 int N = Check(ref str);
@@ -37,13 +37,13 @@ namespace HomeWork4_1
                 Array.Resize(ref arr, N);
 
                 Console.WriteLine("-------------------------------------");
-                Console.WriteLine("Массив вещественных чисел:");
+                Console.WriteLine("Массив целочисленных чисел:");
                 Random rnd = new Random();
 
                 for (int i = 0; i < N; i++)
                 {
-                    arr[i] = rnd.Next(-10, 10) + rnd.NextDouble();
-                    Console.WriteLine("{0:N2}", arr[i]);
+                    arr[i] = rnd.Next(-10, 10);
+                    Console.WriteLine("{0}", arr[i]);
                 }
                 Console.WriteLine();
                 double min = Math.Abs(arr[0]);
@@ -51,7 +51,7 @@ namespace HomeWork4_1
                     if (Math.Abs(arr[i]) <= Math.Abs(min))
                         min = arr[i];
                 Console.WriteLine("-------------------------------------");
-                Console.WriteLine("Минимальный по модулю элемент:  {0:N2}", min);
+                Console.WriteLine("Минимальный по модулю элемент:  {0}", min);
                 int x = 0;
                 bool c = false;
                 for (int i = 0; i < N; i++)
@@ -66,12 +66,12 @@ namespace HomeWork4_1
                     double sum = 0;
                     for (int i = x + 1; i < N; i++)
                         sum += arr[i];
-                    Console.WriteLine("Сумма элементов расположенных после первого нулевого: {0:N2}", sum);
+                    Console.WriteLine("Сумма элементов расположенных после первого нулевого: {0}", sum);
                 }
                 else
                     Console.WriteLine("В массиве нет нулевых элементов.");
 
-                double[] f = new double[N];
+                int[] f = new int[N];
                 for (int i = 0; i < N; i++)
                     f[i] = arr[i];
                 int g = -1;
@@ -90,7 +90,7 @@ namespace HomeWork4_1
                 Console.WriteLine("-------------------------------------");
                 Console.WriteLine("Преобразованный массив: ");
                 for (int i = 0; i < N; i++)
-                    Console.WriteLine("{0:N2}", arr[i]);
+                    Console.WriteLine("{0}", arr[i]);
                 Console.WriteLine("-------------------------------------");
                 Console.WriteLine("Для выхода нажмите любую кнопку...");
                 Console.ReadKey();
